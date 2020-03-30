@@ -10,7 +10,7 @@ RSpec.describe 'As a Visitor' do
 
 			click_on "search"
 
-			expect(current_path).to eq(foods_path)
+			expect(current_path).to eq(search_path)
 
 			expect(page).to have_content("7 results")
 			expect(page).to have_css(".food", count: 7)
