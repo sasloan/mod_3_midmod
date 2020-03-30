@@ -5,7 +5,7 @@ RSpec.describe 'As a Visitor' do
 		it 'And recieve dishes with the ingredient in it' do
 
 			visit '/'
-			save_and_open_page
+
 
 			fill_in :q, with: 'sweet potatoes'
 
