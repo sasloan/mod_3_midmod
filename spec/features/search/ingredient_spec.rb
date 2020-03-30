@@ -6,14 +6,13 @@ RSpec.describe 'As a Visitor' do
 
 			visit '/'
 
-			select 'sweet potatoes', from: :ingredients
+			fill_in :search_form, with: 'sweet potatoes'
 
 			click_on "search"
 
-			expect(current_path).to eq(search_path)
+			expect(current_path).to eq(foods_path)
 
-			expect(page).to have_content("7 results")
-			expect(page).to have_css(".food", count: 7)
+			expect(page).to have_content("32,696 results")
 
 			within(first(".food")) do
 				expect(page).to have_css(".GTIN/UPC code")
