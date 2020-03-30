@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'As a Visitor' do
 	describe 'I can search ingredients' do
-		it 'And recieve dishes with the ingredient in it', :vcr do
+		it 'And recieve dishes with the ingredient in it' do
 
 			visit '/'
 
@@ -10,7 +10,7 @@ RSpec.describe 'As a Visitor' do
 
 			click_on "search"
 
-			expect(current_path).to eq("/foods")
+			expect(current_path).to eq(foods_path)
 
 			expect(page).to have_content("7 results")
 			expect(page).to have_css(".food", count: 7)
