@@ -5,10 +5,11 @@ RSpec.describe 'As a Visitor' do
 		it 'And recieve dishes with the ingredient in it' do
 
 			visit '/'
+			save_and_open_page
 
-			fill_in :search_form, with: 'sweet potatoes'
+			fill_in :q, with: 'sweet potatoes'
 
-			click_on "search"
+			click_on "Search"
 
 			expect(current_path).to eq(foods_path)
 
